@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEditor;
+using UnityEngine;
 
-public class UnityBuild
+public class JenkinsBuild
 {
     private static readonly string GameName = PlayerSettings.productName;
 
@@ -102,7 +103,14 @@ public class UnityBuild
             locationPathName = Path.Combine(location, "Android", $"{GameName}.apk"),
             target = BuildTarget.Android
         };
-
+        var keystore = Resources.Load<AndroidKeyStore>("AndroidKeyStore");
+        if (keystore != null)
+        {
+            PlayerSettings.Android.keystoreName = keystore.KeystoreName;
+            PlayerSettings.Android.keyaliasPass = keystore.KeystorePassword;
+            PlayerSettings.Android.keyaliasName = keystore.AliasName;
+            PlayerSettings.Android.keyaliasPass = keystore.AliasPassword;
+        }
         BuildPipeline.BuildPlayer(playerOptions);
     }
 
