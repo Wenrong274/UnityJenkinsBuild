@@ -7,6 +7,12 @@ using UnityEngine;
 
 public class JenkinsBuild
 {
+    [MenuItem("Builds/Android")]
+    public static void TestBuildAndroid()
+    {
+        BuildAndroid(@"D:\Unity\UnityJenkinsBuild");
+    }
+
     private static readonly string GameName = PlayerSettings.productName;
 
     private static string[] EnabledScenePaths => EditorBuildSettings.scenes
@@ -107,7 +113,7 @@ public class JenkinsBuild
         if (keystore != null)
         {
             PlayerSettings.Android.keystoreName = keystore.KeystoreName;
-            PlayerSettings.Android.keyaliasPass = keystore.KeystorePassword;
+            PlayerSettings.Android.keystorePass = keystore.KeystorePassword;
             PlayerSettings.Android.keyaliasName = keystore.AliasName;
             PlayerSettings.Android.keyaliasPass = keystore.AliasPassword;
         }

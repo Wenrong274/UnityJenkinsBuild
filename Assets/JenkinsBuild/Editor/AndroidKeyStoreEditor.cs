@@ -17,7 +17,7 @@ public class AndroidKeyStoreEditor : Editor
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("Select keystore", GUILayout.Width(150f)))
         {
-            string path = EditorUtility.OpenFilePanel("level", Application.streamingAssetsPath, "keystore");
+            string path = EditorUtility.OpenFilePanel("Select Keystore", Application.streamingAssetsPath, "keystore");
             if (path.Length != 0)
                 m_Target.KeystoreName = path;
         }
