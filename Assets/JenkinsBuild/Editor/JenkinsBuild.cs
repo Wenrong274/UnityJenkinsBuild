@@ -12,7 +12,11 @@ public class JenkinsBuild
     {
         BuildAndroid(@"D:\Unity\UnityJenkinsBuild");
     }
-
+    [MenuItem("Builds/iOS")]
+    public static void TestBuildiOS()
+    {
+        BuildiOS(@"D:\Unity\UnityJenkinsBuild");
+    }
     private static readonly string GameName = PlayerSettings.productName;
 
     private static string[] EnabledScenePaths => EditorBuildSettings.scenes
