@@ -76,13 +76,10 @@ Jenkins 頁面路徑為 `Manage Jenkins -> Plugin Manager -> Available`
 
 ________________________________________________________________________________
 
-[img_1]:./doc/img/1.jpg
-[img_2]:./doc/img/2.jpg
-[img_3]:./doc/img/3.jpg
-[img_4]:./doc/img/4.jpg
-
+[img_1]:./doc/img/1.JPG
+[img_2]:./doc/img/2.JPG
+[img_3]:./doc/img/3.JPG
+[img_4]:./doc/img/4.JPG
 [github]:https://github.com/hybrid274/UnityJenkinsBuild
-
 [ref_1]:http://hoseex.blogspot.com/2017/12/jenkinsunity3d.html
-
 [ref_2]:https://github.com/CarlHalstead/Jenkins-for-Unity-with-DigitalOcean/
