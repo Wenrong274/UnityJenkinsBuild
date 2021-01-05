@@ -7,16 +7,23 @@ using UnityEngine;
 
 public class JenkinsBuild
 {
+    private static string BuildFolder
+    {
+        get { return Path.Combine(Environment.CurrentDirectory, "Builds"); }
+    }
+
     [MenuItem("Builds/Android")]
-    public static void TestBuildAndroid()
+    public static void BuildAndroid()
     {
-        BuildAndroid(@"D:\Unity\UnityJenkinsBuild");
+        BuildAndroid(BuildFolder);
     }
+
     [MenuItem("Builds/iOS")]
-    public static void TestBuildiOS()
+    public static void BuildiOS()
     {
-        BuildiOS(@"D:\Unity\UnityJenkinsBuild");
+        BuildiOS(BuildFolder);
     }
+
     private static readonly string GameName = PlayerSettings.productName;
 
     private static string[] EnabledScenePaths => EditorBuildSettings.scenes
@@ -107,10 +114,11 @@ public class JenkinsBuild
 
     private static void BuildAndroid(string location)
     {
+        string path = Path.Combine(location, "Android", $"{GameName}.apk");
         BuildPlayerOptions playerOptions = new BuildPlayerOptions()
         {
             scenes = EnabledScenePaths,
-            locationPathName = Path.Combine(location, "Android", $"{GameName}.apk"),
+            locationPathName = path,
             target = BuildTarget.Android
         };
         var keystore = Resources.Load<AndroidKeyStore>("AndroidKeyStore");
@@ -122,18 +130,20 @@ public class JenkinsBuild
             PlayerSettings.Android.keyaliasPass = keystore.AliasPassword;
         }
         BuildPipeline.BuildPlayer(playerOptions);
+        Debug.Log(path);
     }
 
     private static void BuildiOS(string location)
     {
+        string path = Path.Combine(location, "iOS", $"{GameName}");
         BuildPlayerOptions playerOptions = new BuildPlayerOptions()
         {
             scenes = EnabledScenePaths,
-            locationPathName = Path.Combine(location, "iOS", $"{GameName}"),
+            locationPathName = path,
             target = BuildTarget.iOS
         };
-
         BuildPipeline.BuildPlayer(playerOptions);
+        Debug.Log(path);
     }
 
     private static void BuildWebGL(string location)

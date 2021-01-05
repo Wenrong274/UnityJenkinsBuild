@@ -70,9 +70,9 @@ Jenkins 頁面路徑為 `Manage Jenkins -> Plugin Manager -> Available`
 
 ## reference
 
-[使用jenkins建置unity3d專案][ref_1] 
+[使用jenkins建置unity3d專案][ref_1]
 
-[Jenkins for Unity with DigitalOcean][ref_1]
+[Jenkins for Unity with DigitalOcean][ref_2]
 
 ________________________________________________________________________________
 
