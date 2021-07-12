@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-namespace JenkinsBuild
+namespace hyhy.Jenkins
 {
     [CreateAssetMenu(fileName = "AndroidKeyStore", menuName = "JenkinsBuild/Creat AndroidKeyStore", order = 1)]
-    public class AndroidKeyStore : ScriptableObject
+    public class KeyStore : ScriptableObject
     {
         public string KeystoreName;
         public string KeystorePassword;

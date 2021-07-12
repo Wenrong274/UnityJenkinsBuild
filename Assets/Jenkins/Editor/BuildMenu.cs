@@ -2,25 +2,25 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace JenkinsBuild
+namespace hyhy.Jenkins
 {
-    public class ToolBuild : MonoBehaviour
+    public class BuildMenu : MonoBehaviour
     {
-        private static string SavePath
+        private static string BuildFolder
         {
             get { return Directory.GetParent(Application.dataPath).FullName.Replace('\\', '/') + "/Builds"; }
         }
 
         [MenuItem("Builds/Android")]
-        public static void BuildAndroidTaiwan()
+        public static void BuildAndroid()
         {
-            JenkinsBuild.BuildAndroid(SavePath);
+            Jenkins.BuildAndroid(BuildFolder);
         }
 
         [MenuItem("Builds/iOS")]
-        public static void TestBuildiOS()
+        public static void BuildiOS()
         {
-            JenkinsBuild.BuildiOS(SavePath);
+            Jenkins.BuildiOS(BuildFolder);
         }
     }
 }

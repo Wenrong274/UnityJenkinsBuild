@@ -1,17 +1,17 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace JenkinsBuild
+namespace hyhy.Jenkins
 {
-    [CustomEditor(typeof(AndroidKeyStore))]
-    public class AndroidKeyStoreEditor : Editor
+    [CustomEditor(typeof(KeyStore))]
+    public class KeyStoreEditor : Editor
     {
         private float labelWidth = 125f;
-        private AndroidKeyStore m_Target;
+        private KeyStore m_Target;
 
         private void OnEnable()
         {
-            m_Target = (AndroidKeyStore)target;
+            m_Target = (KeyStore)target;
         }
 
         public override void OnInspectorGUI()

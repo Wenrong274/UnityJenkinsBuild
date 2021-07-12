@@ -5,9 +5,9 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace JenkinsBuild
+namespace hyhy.Jenkins
 {
-    public class JenkinsBuild
+    public class Jenkins
     {
         private static readonly string GameName = PlayerSettings.productName;
         private static readonly string GameVersion = Application.version.Replace(".", "");
@@ -115,7 +115,7 @@ namespace JenkinsBuild
                 locationPathName = path,
                 target = BuildTarget.Android
             };
-            var keystore = Resources.Load<AndroidKeyStore>("AndroidKeyStore");
+            var keystore = Resources.Load<KeyStore>("AndroidKeyStore");
             if (keystore != null)
             {
                 PlayerSettings.Android.keystoreName = keystore.KeystoreName;

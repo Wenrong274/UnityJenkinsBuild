@@ -1,4 +1,4 @@
-# UnityJenkinsBuild
+# UnityJenkins
 
 此為使用 Jenkins 輸出 Unity 專案注意事項。
 
